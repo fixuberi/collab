@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Login', :type  => :feature, js: true do
+RSpec.feature 'Login', :type => :feature, js: true do
   let!(:user) { create(:user) }
 
   scenario 'user navigates to the root page and successfully logs in' do
