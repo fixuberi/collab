@@ -37,5 +37,5 @@ class PostsController < ApplicationController
       Post.by_category(branch, category).search(search)
     else
     end
-  end
+  end  
 end
