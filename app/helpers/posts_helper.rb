@@ -26,4 +26,12 @@ module PostsHelper
   def category_field_partial_path
     params[:category].present? ? 'posts/branch/search_form/category_field' : 'shared/empty_partial'
   end
+
+  def update_pagination_partial_path
+    if @posts.next_page
+      'posts/posts_pagination_page/update_pagination'
+    else
+      'posts/posts_pagination_page/remove_pagination'
+    end
+  end
 end
