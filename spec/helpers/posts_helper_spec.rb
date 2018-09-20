@@ -43,4 +43,19 @@ RSpec.describe PostsHelper, :type => :helper do
       expect(helper.post_format_partial_path).to eq 'posts/post/branch_page'
     end
   end
+
+  describe '#update_pagination_partial_path' do
+    it 'return update_pagination partial' do
+      posts = double('posts', :next_page => 2)
+      assign(:posts, posts)
+      expect(helper.update_pagination_partial_path)
+          .to eq 'posts/posts_pagination_page/update_pagination'
+    end
+    it 'return remove_pagination partial' do
+      posts = double('posts', :next_page => nil)
+      assign(:posts, posts)
+      expect(helper.update_pagination_partial_path)
+          .to eq 'posts/posts_pagination_page/remove_pagination'
+    end
+  end
 end
