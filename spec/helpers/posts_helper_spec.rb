@@ -24,12 +24,12 @@ RSpec.describe PostsHelper, :type => :helper do
   end
   describe '#no_posts_partial_path' do
     it 'returns no_posts partial path' do
-      assign(:posts, [])
-      expect(helper.no_posts_partial_path).to eq 'posts/branch/no_posts'
+      posts = []
+      expect(helper.no_posts_partial_path(posts)).to eq 'shared/no_posts'
     end
     it 'return empty_partial partial path' do
-      assign(:posts, [1])
-      expect(helper.no_posts_partial_path).to eq 'shared/empty_partial'
+      posts = [1]
+      expect(helper.no_posts_partial_path(posts)).to eq 'shared/empty_partial'
     end
   end
 
