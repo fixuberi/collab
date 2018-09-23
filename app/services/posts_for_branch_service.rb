@@ -1,7 +1,7 @@
 class PostsForBranchService
 
   def initialize(params)
-    @branch = params[:action]
+    @branch = params[:branch]
     @search = params[:search]
     @category = params[:category]
   end
